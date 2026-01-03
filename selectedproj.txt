@@ -1,0 +1,6 @@
+Quantitative Research Log Analyzer | Python, Pandas, NumPy, Streamlit
+Developed a production-grade tool to parse, structure, and analyze logs from simulated quantitative trading/research systems, enabling rapid identification of errors, latency spikes, and performance bottlenecks.
+• Parsed unstructured JSONL logs into Pandas DataFrames, handled malformed entries gracefully, and computed key metrics (error rates, latency percentiles, rolling statistics) using NumPy to support production monitoring and correctness checks.
+• Implemented rule-based anomaly detection with alerting, summary report generation, and scalable processing for large logs (100K+ lines), ensuring traceability and fast issue resolution in research workflows.
+• Built an interactive Streamlit dashboard with file upload, dynamic filters (date ranges, error levels), real-time visualizations, and exportable reports—facilitating ad-hoc exploratory analysis and collaboration with quantitative researchers.
+• https://github.com/[your-username]/quant-log-analyzer

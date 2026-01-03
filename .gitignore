@@ -1,0 +1,67 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments (even if you don't have one now, safe to ignore)
+venv/
+env/
+.venv/
+ENV/
+
+# Jupyter/IPython
+.ipynb_checkpoints
+*.ipynb
+
+# Streamlit specific
+.streamlit/
+streamlit_config.toml
+secrets.toml
+
+# Data and temporary files
+data/
+*.parquet
+*.jsonl
+*.json
+*.csv
+*.log
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Other common ignores
+*.swp
+*.swo
+*~
+
+# Allow the main app to be tracked
+!app.py
