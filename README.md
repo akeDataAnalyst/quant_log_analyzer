@@ -2,7 +2,7 @@
 
 A professional, production-ready internal tool built in Python to support quantitative researchers in monitoring system correctness, validating data quality, and performing exploratory log analysis.
 
-This Streamlit dashboard parses, analyzes, and visualizes large volumes of unstructured research/trading system logs — demonstrating the exact skills required for a Python Analyst role in quantitative trading firms
+This Streamlit dashboard parses, analyzes, and visualizes large volumes of unstructured research/trading system logs
 
 **Live Demo**: [https://quantloganalyzer-epiqhjt8h3z2wvqs6wjmvx.streamlit.app/] 
 
