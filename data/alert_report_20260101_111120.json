@@ -1,0 +1,24 @@
+{
+  "alert_count": 1,
+  "alerts": [
+    {
+      "type": "LATENCY_SPIKE",
+      "severity": "HIGH",
+      "count": 145,
+      "max_latency_ms": 4884.17,
+      "affected_components": {
+        "signal_generator": 31,
+        "order_executor": 21,
+        "ml_model": 21
+      },
+      "sample_messages": [
+        "Position updated successfully",
+        "Data corruption detected in feed for SPY",
+        "Data feed tick received for AAPL",
+        "Model inference completed in 3035ms",
+        "Cache statistics: hits=808, misses=98"
+      ]
+    }
+  ],
+  "detection_timestamp": "2026-01-01T11:06:13.156360"
+}

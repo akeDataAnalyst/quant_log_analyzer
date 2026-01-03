@@ -1,0 +1,2 @@
+timestamp,type,severity,count,max_latency_ms,affected_components,sample_messages
+2026-01-01T11:06:13.156360,LATENCY_SPIKE,HIGH,145,4884.17,"{'signal_generator': 31, 'order_executor': 21, 'ml_model': 21}","['Position updated successfully', 'Data corruption detected in feed for SPY', 'Data feed tick received for AAPL', 'Model inference completed in 3035ms', 'Cache statistics: hits=808, misses=98']"

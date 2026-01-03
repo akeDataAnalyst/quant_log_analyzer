@@ -1,0 +1,123 @@
+{
+  "summary_metrics": {
+    "total_entries": 5000,
+    "unique_assets": 8,
+    "unique_components": 7,
+    "level_counts": {
+      "INFO": 3215,
+      "WARNING": 964,
+      "ERROR": 547,
+      "DEBUG": 274
+    },
+    "error_rate_pct": 10.94,
+    "warning_rate_pct": 19.28,
+    "latency": {
+      "mean_ms": 272.839518,
+      "median_ms": 160.12,
+      "p95_ms": 298.92,
+      "p99_ms": 4013.2443000000003,
+      "max_ms": 4884.17,
+      "std_ms": 607.3529354225825,
+      "spike_count_gt_1000ms": 221
+    },
+    "top_error_components": {
+      "position_sizer": 91,
+      "order_executor": 84,
+      "risk_manager": 84,
+      "signal_generator": 76,
+      "data_feed": 74,
+      "ml_model": 72,
+      "backtest_engine": 66
+    },
+    "top_error_assets": {
+      "GC": 76,
+      "SPY": 72,
+      "ETHUSD": 72,
+      "EURUSD": 70,
+      "BTCUSD": 67,
+      "CL": 67,
+      "TSLA": 65,
+      "AAPL": 58
+    },
+    "signal_failure_rate_pct": 15.165876777251185
+  },
+  "hourly_summary_sample": [
+    {
+      "hour": "2026-01-01 08:00:00",
+      "error_count": 40,
+      "avg_latency_ms": 254.71611336032387
+    },
+    {
+      "hour": "2026-01-01 09:00:00",
+      "error_count": 47,
+      "avg_latency_ms": 267.92284
+    },
+    {
+      "hour": "2026-01-01 10:00:00",
+      "error_count": 57,
+      "avg_latency_ms": 267.2993013972056
+    },
+    {
+      "hour": "2026-01-01 11:00:00",
+      "error_count": 59,
+      "avg_latency_ms": 334.69766
+    },
+    {
+      "hour": "2026-01-01 12:00:00",
+      "error_count": 59,
+      "avg_latency_ms": 253.1590618762475
+    },
+    {
+      "hour": "2026-01-01 13:00:00",
+      "error_count": 56,
+      "avg_latency_ms": 309.6669860279441
+    },
+    {
+      "hour": "2026-01-01 14:00:00",
+      "error_count": 61,
+      "avg_latency_ms": 223.9241716566866
+    },
+    {
+      "hour": "2026-01-01 15:00:00",
+      "error_count": 66,
+      "avg_latency_ms": 321.1490781563126
+    },
+    {
+      "hour": "2026-01-01 16:00:00",
+      "error_count": 47,
+      "avg_latency_ms": 268.96300601202404
+    },
+    {
+      "hour": "2026-01-01 17:00:00",
+      "error_count": 54,
+      "avg_latency_ms": 228.26767068273094
+    }
+  ],
+  "latency_spike_sample": [
+    {
+      "timestamp": "2026-01-01 08:02:13",
+      "latency_ms": 2331.54,
+      "message": "Signal generated for asset AAPL"
+    },
+    {
+      "timestamp": "2026-01-01 08:12:01",
+      "latency_ms": 1014.86,
+      "message": "Position updated successfully"
+    },
+    {
+      "timestamp": "2026-01-01 08:12:25",
+      "latency_ms": 2117.51,
+      "message": "Data corruption detected in feed for SPY"
+    },
+    {
+      "timestamp": "2026-01-01 08:13:20",
+      "latency_ms": 2215.87,
+      "message": "Data feed tick received for AAPL"
+    },
+    {
+      "timestamp": "2026-01-01 08:15:21",
+      "latency_ms": 3035.29,
+      "message": "Model inference completed in 3035ms"
+    }
+  ]
+}
