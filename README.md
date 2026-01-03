@@ -4,7 +4,7 @@ A professional, production-ready internal tool built in Python to support quanti
 
 This Streamlit dashboard parses, analyzes, and visualizes large volumes of unstructured research/trading system logs — demonstrating the exact skills required for a Python Analyst role in quantitative trading firms
 
-**Live Demo**: [Replace with your Streamlit Cloud link after deployment]  
+**Live Demo**: [https://quantloganalyzer-epiqhjt8h3z2wvqs6wjmvx.streamlit.app/] 
 
 
 ## Project Overview
