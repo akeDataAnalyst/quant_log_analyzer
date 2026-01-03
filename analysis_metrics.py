@@ -1,18 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# #### Goal of Analysis and Metric Calculation
-# Implement core analytical functions to extract meaningful metrics and insights from the parsed log DataFrame.
-# - Monitor production systems and analyze logs to ensure correctness
-# - Support ad-hoc research and exploratory analysis tasks
-# - High attention to detail and analytical/problem-solving skills
-# 
-
-# #### 1: Imports and Load Parsed Data
-
-# In[1]:
-
-
 # Imports for analysis
 import pandas as pd
 import numpy as np
@@ -30,23 +15,6 @@ df = pd.read_parquet(CLEANED_FILE)
 print(f"Loaded DataFrame with {len(df):,} rows and {df.shape[1]} columns")
 print(f"Time range: {df['timestamp'].min()} → {df['timestamp'].max()}")
 display(df.head())
-
-
-# #### 2: Key Metric Calculation Function
-
-# ##### Core Metrics Calculation
-# 
-# We compute essential monitoring metrics:
-# - Overall counts and rates
-# - Latency statistics (mean, p95, p99 – critical for HFT/quant systems)
-# - Error/Warning rates
-# - Per-component and per-asset breakdowns
-# - Hourly temporal patterns
-# 
-# These enable fast detection of system health issues.
-
-# In[2]:
-
 
 def calculate_key_metrics(df: pd.DataFrame) -> dict:
     """
@@ -111,12 +79,6 @@ for key, value in metrics.items():
     else:
         print(f"{key.replace('_', ' ').title()}: {value:.2f}" if isinstance(value, float) else f"{key.replace('_', ' ').title()}: {value}")
 
-
-# #### 3: Time-Based Analysis
-
-# In[3]:
-
-
 # Add hour column for grouping
 df['hour'] = df['timestamp'].dt.floor('H')
 
@@ -139,15 +101,6 @@ display(hourly_summary.sort_index())
 hourly_summary.to_parquet("data/hourly_summary.parquet")
 
 
-# #### 4: Anomaly Highlighting – High-Latency Events
-
-# ##### Simple Anomaly Detection: Latency Spikes
-# 
-# Flag periods with unusually high latency using rolling statistics.
-
-# In[4]:
-
-
 # Sort just in case
 df_sorted = df.sort_values('timestamp').reset_index(drop=True)
 
@@ -164,11 +117,6 @@ display(spike_events[['timestamp', 'latency_ms', 'component', 'asset', 'message'
 
 # Save flagged events for dashboard
 spike_events.to_parquet("data/latency_spikes.parquet")
-
-
-# #### 5: Summary Report Export
-
-# In[8]:
 
 
 report = {
@@ -201,10 +149,5 @@ with open("data/analysis_report.json", "w") as f:
     json.dump(report, f, indent=2, default=json_serializable)
 
 print("Full analysis report successfully saved to data/analysis_report.json")
-
-
-# In[ ]:
-
-
 
 

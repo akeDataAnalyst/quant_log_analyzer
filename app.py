@@ -1,11 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# #### 1: Imports and Setup
-
-# In[1]:
-
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -22,11 +14,6 @@ Supports file upload, exploratory filtering, metrics, and automated anomaly aler
 """)
 
 DATA_DIR = Path("data")
-
-
-# #### 2: File Upload and Parsing
-
-# In[2]:
 
 
 @st.cache_data(show_spinner="Parsing logs...")
@@ -66,11 +53,6 @@ df = load_and_parse(uploaded_file)
 st.success(f"Loaded {len(df):,} log entries")
 
 
-# #### 3: Key Metrics Sidebar
-
-# In[3]:
-
-
 st.sidebar.header("Key Metrics")
 
 level_counts = df['level'].value_counts()
@@ -83,11 +65,6 @@ if len(latency) > 0:
     st.sidebar.metric("Avg Latency (ms)", f"{latency.mean():.1f}")
     st.sidebar.metric("P95 Latency (ms)", f"{np.percentile(latency, 95):.1f}")
     st.sidebar.metric("P99 Latency (ms)", f"{np.percentile(latency, 99):.1f}")
-
-
-# #### 4: Interactive Filters and Preview
-
-# In[4]:
 
 
 from datetime import datetime, timedelta  # ← Add timedelta here
@@ -133,12 +110,6 @@ filtered_df = df[
 st.dataframe(filtered_df.head(200), use_container_width=True)
 st.caption(f"Showing {len(filtered_df):,} of {len(df):,} entries after filtering")
 
-
-# #### 5: Overall Log Level Breakdown
-
-# In[5]:
-
-
 st.markdown("---")  # Optional: visual separator
 st.subheader("Log Level Distribution in Current View")
 
@@ -171,12 +142,6 @@ else:
     st.info("ℹ️ No logs match the current filters")
 
 st.markdown("---")  # Separator before next section
-
-
-# #### 6: Visualizations
-
-# In[6]:
-
 
 st.header("Visualizations")
 
@@ -232,11 +197,6 @@ with col4:
         st.info("ℹ️ No data for component breakdown")
 
 
-# #### 7: Anomaly Alerts and Report Generation
-
-# In[7]:
-
-
 st.header("Anomaly Alerts")
 
 # Reuse simple detection logic
@@ -270,10 +230,5 @@ if st.button("Generate Full Report"):
     with open(report_path, "w") as f:
         json.dump(report_data, f, indent=2, default=str)
     st.success(f"Report saved to {report_path.name}")
-
-
-# In[ ]:
-
-
 
 
